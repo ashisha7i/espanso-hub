@@ -1,0 +1,267 @@
+# espanso configuration file
+
+# This is the default configuration file, change it as you like it
+# You can refer to the official documentation:
+# https://espanso.org/docs/
+
+# Turn off Notification for Secure Input
+secure_input_notification: false
+
+# Matches are the substitution rules, when you type the "trigger" string
+# it gets replaced by the "replace" string.
+matches:
+  # Simple text replacement
+  - trigger: ":espanso"
+    replace: "Hi there!"
+
+  - trigger: "teh "
+    replace: "the "
+
+  - trigger: "hte "
+    replace: "the "
+
+  # Dates
+  - trigger: ":date"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: date
+        params:
+          format: "%m/%d/%Y"
+
+  - trigger: ":mymlife"
+    replace: "77542522"
+  
+  - trigger: ":asset"
+    replace: "A407668"
+
+  - trigger: ":utcdate"
+    replace: "{{utc_date}}"
+    vars:
+      - name: utc_date
+        type: shell
+        params:
+          cmd: "date -u +\"%Y-%m-%dT%TZ\""
+
+  # Shell commands
+  - trigger: ":shello"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: "echo Hello from your shell"
+
+  - trigger: ":publicip"
+    replace: "{{public_ip}}"
+    vars:
+      - name: public_ip
+        type: shell
+        params:
+          cmd: "dig +short myip.opendns.com @resolver1.opendns.com"
+
+  - trigger: ":localip"
+    replace: "{{local_ip}}"
+    vars: 
+      - name: local_ip
+        type: shell
+        params:
+          cmd: "ipconfig getifaddr en0"
+
+  - trigger: ":ngrok"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: "curl --silent --show-error http://127.0.0.1:4040/api/tunnels | jq -r '.tunnels[1].public_url'"
+
+  - trigger: ":opsgenie"
+    replace: "https://mgmdigital.app.opsgenie.com/"
+
+
+  # Custom
+  - trigger: ":jira"
+    replace: "https://mgmdigitalventures.atlassian.net/jira/software/c/projects/RTC/boards/242"
+
+  - trigger: ":acsjira"
+    replace: "https://mgmdigitalventures.atlassian.net/jira/software/c/projects/MMC/boards/187"
+
+  - trigger: ":ticket"
+    replace: "https://mgmdigitalventures.atlassian.net/browse/"
+
+  - trigger: ":dashboard"
+    replace: "https://portal.azure.com/#@mgmresorts.onmicrosoft.com/dashboard/arm/subscriptions/b2a26042-2b0c-4ed4-b52a-c9c8eef50d8b/resourcegroups/cigdp-uw-rg-p/providers/microsoft.portal/dashboards/ff8d4e70-2652-47b7-b189-e861175c8129"
+
+  - trigger: ":roadmap"
+    replace: "https://mgmdigitalventures.atlassian.net/wiki/spaces/PER/pages/1896186427/2022+Roadmaps"
+
+  - trigger: ":azdash"
+    replace: "https://portal.azure.com/#@mgmresorts.onmicrosoft.com/dashboard/arm/subscriptions/b2a26042-2b0c-4ed4-b52a-c9c8eef50d8b/resourcegroups/cigdp-uw-rg-p/providers/microsoft.portal/dashboards/ff8d4e70-2652-47b7-b189-e861175c8129"
+
+  - trigger: ":okr"
+    replace: "https://mgmresorts-my.sharepoint.com/:x:/p/523724/EbosGOwy_MBDua7VBxvM0TwBSQtxOJN62RtgzGKbAb_TUQ?e=4%3APVyG1u&at=9&wdLOR=c46773251-8EA6-5E4E-BCCE-5AC904E55A1F"
+
+  - trigger: ":wiki"
+    replace: "https://mgmdigitalventures.atlassian.net/wiki/home"
+
+  - trigger: ":feed"
+    replace: "https://dev.azure.com/MGMResortsDigitalEngineering/Customer%20Insights%20and%20Growth%20Data/_packaging?_a=feed&feed=CIG-Feed"
+
+  - trigger: ":pim"
+    replace: "https://portal.azure.com/#blade/Microsoft_Azure_PIMCommon/ActivationMenuBlade/azurerbac"
+
+  - trigger: ":prtlh"
+    replace: "https://portal.azure.com/#home"
+
+  - trigger: ":prtld"
+    replace: "https://portal.azure.com/#@MGMResorts.onmicrosoft.com/resource/subscriptions/3429a2df-1acc-4e8a-858b-58d3d612a7b0/resourceGroups/cigrtc-uw-rg-d/overview"
+
+  - trigger: ":prtlq"
+    replace: "https://portal.azure.com/#@MGMResorts.onmicrosoft.com/resource/subscriptions/3429a2df-1acc-4e8a-858b-58d3d612a7b0/resourceGroups/cigrtc-uw-rg-q/overview"
+
+  - trigger: ":prtlr"
+    replace: "https://portal.azure.com/#@MGMResorts.onmicrosoft.com/resource/subscriptions/3429a2df-1acc-4e8a-858b-58d3d612a7b0/resourceGroups/cigrtc-uw-rg-r/overview"
+
+  - trigger: ":prtlp"
+    replace: "https://portal.azure.com/#@MGMResorts.onmicrosoft.com/resource/subscriptions/b2a26042-2b0c-4ed4-b52a-c9c8eef50d8b/resourceGroups/cigrtc-uw-rg-p/overview"
+
+  - trigger: ":approve"
+    replace: "https://portal.azure.com/?Microsoft_Azure_PIMCommon=true#blade/Microsoft_Azure_PIMCommon/ApproveRequestMenuBlade/azurerbac"
+    
+  - trigger: ":sre"
+    replace: "https://portal.azure.com/#@MGMResorts.onmicrosoft.com/resource/subscriptions/93dafe68-4af1-4c4f-a7fe-0aebcaee3eed/resourceGroups/EventLogProcessing/providers/Microsoft.Kusto/clusters/mgmdv1/databases/service_telemetry/data_explorer"
+
+  - trigger: ":devops"
+    replace: "https://dev.azure.com/MGMResortsDigitalEngineering/"
+
+  - trigger: ":aagm"
+    replace: "agnihotri.ashish@gmail.com"
+
+  - trigger: ":aamgm"
+    replace: "aagnihotri@mgmresorts.com"
+
+  - trigger: ":livesite"
+    replace: "https://app.powerbi.com/groups/me/apps/85b33836-458e-400c-b144-8f4374fc18c1/reports/6a190720-413f-4a4e-92f6-ed244526e38e/ReportSection0aca6b083381a25ba0be?ctid=ddb8592f-ed74-4329-bfd2-571b7c34699e"
+
+  - trigger: ":shrug"
+    replace: "¯\\_(ツ)_/¯"
+
+  # Dummy Credit Cards for Testing
+  - trigger: ":ccvisa"
+    replace: "4012888888881881"
+
+  - trigger: ":ccmc"
+    replace: "5105105105105100"
+
+  - trigger: ":ccamex"
+    replace: "378282246310005"
+
+  - trigger: ":ccdisco"
+    replace: "6011111111111117"
+
+  - trigger: ":mail1"
+    replace: "rtctestmail+1@gmail.com"
+
+  - trigger: ":mailr"
+    replace: "rtctestmail+r@gmail.com"
+
+  - trigger: ":moi"
+    replace: "Ashish Agnihotri"
+
+  - trigger: ":fn"
+    replace: "Ashish"
+
+  - trigger: ":ln"
+    replace: "Agnihotri"
+
+  - trigger: ":ph"
+    replace: "408111222"
+
+  - trigger: ":addr1"
+    replace: "100 California Circle"
+
+  - trigger: ":city"
+    replace: "Sunnyvale"
+
+  - trigger: ":zip"
+    replace: "94085"
+
+  - trigger: ":hdeuat"
+    replace: "https://uat.devtest.vegas/book-package/seats/?category=gaga22-1"
+
+  - trigger: ":hdedev"
+    replace: "https://dev.devtest.vegas/book-package/seats/?category=gaga22-1"
+
+  - trigger: ":apimd"
+    replace: "https://portal.azure.com/#@MGMResorts.onmicrosoft.com/resource/subscriptions/a07a1ed6-22e4-4781-b58e-aa1685bc93b2/resourceGroups/digengAPIM-uw-rg-d/providers/Microsoft.ApiManagement/service/dignengAPIM-uw-apim-d/overview"
+
+  - trigger: ":apimp"
+    replace: "https://portal.azure.com/#@MGMResorts.onmicrosoft.com/resource/subscriptions/a07a1ed6-22e4-4781-b58e-aa1685bc93b2/resourceGroups/digengapim-uw-rg-p/providers/Microsoft.ApiManagement/service/dignengAPIM-uw-apim-p/overview"
+
+
+  # Misc
+  - trigger: ":333"
+    replace: "https://mgmresorts.sharepoint.com/:x:/r/sites/CustomerInsightsGrowth/_layouts/15/doc2.aspx?action=edit&sourcedoc=%7B8EF97269-A192-4392-9653-53323E41E3E6%7D&cid=13572570-bddd-46ee-afff-e82e1d8328ba"
+
+  - trigger: ":timesheet"
+    replace: "https://mgmresorts.service-now.com/tcp?sysparm_domain_restore=false&sysparm_stack=no"
+
+  - trigger: ":cbe"
+    replace: "◻️"
+
+  - trigger: ":cbc"
+    replace: "✅"
+
+  - trigger: ":chk"
+    replace: "✓"
+
+  - trigger: ":lxp"
+    replace: "https://aka.ms/LxPExamDiscountVideo"
+
+  - trigger: ":esi"
+    replace: "https://esi.microsoft.com/landing"
+
+  - trigger: ":training"
+    replace: "https://esi.microsoft.com/landing"
+
+  - trigger: ":weekly"
+    replace: "https://mgmdigitalventures.atlassian.net/wiki/spaces/~356476296/pages/1827569865/CIG+Weekly+Status"
+
+  - trigger: ":deeplink"
+    replace: "https://mgmdigitalventures.atlassian.net/wiki/spaces/APP/pages/217973200/Deep+Link+SOP"
+
+  - trigger: ":firebase"
+    replace: "https://console.firebase.google.com/u/4/project/mgm-resorts-app/overview"
+
+  - trigger: ":report"
+    replace: "https://mgmdigitalventures.atlassian.net/wiki/spaces/DVPM/pages/1038485381"
+
+  - trigger: ":demox"
+    replace: "https://mgmdigitalventures.atlassian.net/wiki/spaces/PER/pages/2203124223/CIG+Sprint+Demos"
+
+  - trigger: ":demoi"
+    replace: "https://mgmdigitalventures.atlassian.net/l/cp/gde8r5Z1"
+
+  - trigger: ":webdam"
+    replace: "https://thelibrary.mgmresorts.com/cloud/#landing"
+
+
+  # New version tests        
+  - regex: "(code|cd) (all|py) (all|pr)" # Code Category - Python Subcategory - Print
+    replace: "print(\"Hello World\")"
+
+  - regex: "(code|cd) (all|py) (all|fn)" # Code Category - Python Subcategory - Function
+    replace: "def myPythonFunction():"
+
+  - regex: "(code|cd) (all|js) (all|fn)" # Code Category - Javascript Subcategory - Function
+    replace: "function main(){}"
+
+  - regex: "(contact|ct) (all|n) (all|jj)" # Contact Category - Name Subcategory - John Jacobs
+    replace: "John Jacobs"
+  
+  - regex: "(contact|ct) (all|n) (all|js)" # Contact Category - Name Subcategory - John Stuart
+    replace: "John Stuart"
+  
+  - regex: "(contact|ct) (all|e) (all|jj)" # Contact Category - Email Subcategory - John Jacobs
+    replace: "john.jacobs@example.com"

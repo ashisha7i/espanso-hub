@@ -1,0 +1,5 @@
+name: "mgm-rtc-package"
+title: "Package for the settings used at MGM/Work"
+description: Collection of utils for making day to day work more productive
+version: 0.1.0
+author: Ashish Agnihotri
