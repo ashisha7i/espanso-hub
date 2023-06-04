@@ -1,25 +1,9 @@
-# espanso configuration file
-
-# This is the default configuration file, change it as you like it
-# You can refer to the official documentation:
-# https://espanso.org/docs/
-
-# Turn off Notification for Secure Input
-secure_input_notification: false
-
-# Matches are the substitution rules, when you type the "trigger" string
-# it gets replaced by the "replace" string.
 matches:
-  # Simple text replacement
-  - trigger: ":espanso"
-    replace: "Hi there!"
-
   - trigger: "teh "
     replace: "the "
-
   - trigger: "hte "
     replace: "the "
-
+  
   # Dates
   - trigger: ":date"
     replace: "{{mydate}}"
@@ -28,13 +12,10 @@ matches:
         type: date
         params:
           format: "%m/%d/%Y"
-
   - trigger: ":mymlife"
     replace: "77542522"
-  
   - trigger: ":asset"
     replace: "A407668"
-
   - trigger: ":utcdate"
     replace: "{{utc_date}}"
     vars:
