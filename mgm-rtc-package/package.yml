@@ -102,27 +102,34 @@ matches:
 
   - trigger: ":prtlh"
     replace: "https://portal.azure.com/#home"
+    label: "Azure Portal Home"
 
   - trigger: ":prtld"
     replace: "https://portal.azure.com/#@MGMResorts.onmicrosoft.com/resource/subscriptions/3429a2df-1acc-4e8a-858b-58d3d612a7b0/resourceGroups/cigrtc-uw-rg-d/overview"
+    label: "Azure Portal Dev (cigrtc-uw-rg-d)"
 
   - trigger: ":prtlq"
     replace: "https://portal.azure.com/#@MGMResorts.onmicrosoft.com/resource/subscriptions/3429a2df-1acc-4e8a-858b-58d3d612a7b0/resourceGroups/cigrtc-uw-rg-q/overview"
+    label: "Azure Portal QA (cigrtc-uw-rg-q)"
 
   - trigger: ":prtlr"
     replace: "https://portal.azure.com/#@MGMResorts.onmicrosoft.com/resource/subscriptions/3429a2df-1acc-4e8a-858b-58d3d612a7b0/resourceGroups/cigrtc-uw-rg-r/overview"
+    label: "Azure Portal PreProd (cigrtc-uw-rg-r)"
 
   - trigger: ":prtlp"
     replace: "https://portal.azure.com/#@MGMResorts.onmicrosoft.com/resource/subscriptions/b2a26042-2b0c-4ed4-b52a-c9c8eef50d8b/resourceGroups/cigrtc-uw-rg-p/overview"
+    label: "Azure Portal Prod (cigrtc-uw-rg-p)"
 
   - trigger: ":approve"
     replace: "https://portal.azure.com/?Microsoft_Azure_PIMCommon=true#blade/Microsoft_Azure_PIMCommon/ApproveRequestMenuBlade/azurerbac"
+    label: "Azure Portal Approve PIM Requests"
     
   - trigger: ":sre"
     replace: "https://portal.azure.com/#@MGMResorts.onmicrosoft.com/resource/subscriptions/93dafe68-4af1-4c4f-a7fe-0aebcaee3eed/resourceGroups/EventLogProcessing/providers/Microsoft.Kusto/clusters/mgmdv1/databases/service_telemetry/data_explorer"
 
   - trigger: ":devops"
     replace: "https://dev.azure.com/MGMResortsDigitalEngineering/"
+    label: "Azure DevOps Home"
 
   - trigger: ":aagm"
     replace: "agnihotri.ashish@gmail.com"
@@ -132,6 +139,7 @@ matches:
 
   - trigger: ":livesite"
     replace: "https://app.powerbi.com/groups/me/apps/85b33836-458e-400c-b144-8f4374fc18c1/reports/6a190720-413f-4a4e-92f6-ed244526e38e/ReportSection0aca6b083381a25ba0be?ctid=ddb8592f-ed74-4329-bfd2-571b7c34699e"
+    label: "LiveSite Dashboard"
 
   - trigger: ":shrug"
     replace: "¯\\_(ツ)_/¯"
@@ -192,9 +200,11 @@ matches:
   # Misc
   - trigger: ":333"
     replace: "https://mgmresorts.sharepoint.com/:x:/r/sites/CustomerInsightsGrowth/_layouts/15/doc2.aspx?action=edit&sourcedoc=%7B8EF97269-A192-4392-9653-53323E41E3E6%7D&cid=13572570-bddd-46ee-afff-e82e1d8328ba"
+    label: "3 3 3 Reports"
 
   - trigger: ":timesheet"
     replace: "https://mgmresorts.service-now.com/tcp?sysparm_domain_restore=false&sysparm_stack=no"
+    label: "Timesheet (Service Now)"
 
   - trigger: ":cbe"
     replace: "◻️"
