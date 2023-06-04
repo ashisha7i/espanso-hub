@@ -3,11 +3,13 @@ matches:
   - trigger: ":espanso"
     replace: "Hi there!"
 
-  - trigger: "teh "
-    replace: "the "
+  - trigger: "teh"
+    replace: "the"
+    word: true
 
-  - trigger: "hte "
-    replace: "the "
+  - trigger: "hte"
+    replace: "the"
+    word: true
 
   # Dates
   - trigger: ":date"
