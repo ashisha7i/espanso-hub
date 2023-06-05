@@ -26,6 +26,14 @@ matches:
   - trigger: ":asset"
     replace: "A407668"
 
+  - trigger: ":utcdate"
+    replace: "{{utc_date}}"
+    vars:
+      - name: utc_date
+        type: shell
+        params:
+          cmd: "date -u +\"%Y-%m-%dT%TZ\""
+
   # Shell commands
   - trigger: ":shello"
     replace: "{{output}}"
@@ -35,8 +43,33 @@ matches:
         params:
           cmd: "echo Hello from your shell"
 
+  - trigger: ":publicip"
+    replace: "{{public_ip}}"
+    vars:
+      - name: public_ip
+        type: shell
+        params:
+          cmd: "dig +short myip.opendns.com @resolver1.opendns.com"
+
+  - trigger: ":localip"
+    replace: "{{local_ip}}"
+    vars: 
+      - name: local_ip
+        type: shell
+        params:
+          cmd: "ipconfig getifaddr en0"
+
+  - trigger: ":ngrok"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: "curl --silent --show-error http://127.0.0.1:4040/api/tunnels | jq -r '.tunnels[1].public_url'"
+
   - trigger: ":opsgenie"
     replace: "https://mgmdigital.app.opsgenie.com/"
+
 
   # Custom
   - trigger: ":jira"
@@ -111,6 +144,22 @@ matches:
     replace: "https://app.powerbi.com/groups/me/apps/85b33836-458e-400c-b144-8f4374fc18c1/reports/6a190720-413f-4a4e-92f6-ed244526e38e/ReportSection0aca6b083381a25ba0be?ctid=ddb8592f-ed74-4329-bfd2-571b7c34699e"
     label: "LiveSite Dashboard"
 
+  - trigger: ":shrug"
+    replace: "¯\\_(ツ)_/¯"
+
+  # Dummy Credit Cards for Testing
+  - trigger: ":ccvisa"
+    replace: "4012888888881881"
+
+  - trigger: ":ccmc"
+    replace: "5105105105105100"
+
+  - trigger: ":ccamex"
+    replace: "378282246310005"
+
+  - trigger: ":ccdisco"
+    replace: "6011111111111117"
+
   - trigger: ":mail1"
     replace: "rtctestmail+1@gmail.com"
 
@@ -159,6 +208,15 @@ matches:
   - trigger: ":timesheet"
     replace: "https://mgmresorts.service-now.com/tcp?sysparm_domain_restore=false&sysparm_stack=no"
     label: "Timesheet (Service Now)"
+
+  - trigger: ":cbe"
+    replace: "◻️"
+
+  - trigger: ":cbc"
+    replace: "✅"
+
+  - trigger: ":chk"
+    replace: "✓"
 
   - trigger: ":lxp"
     replace: "https://aka.ms/LxPExamDiscountVideo"
