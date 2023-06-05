@@ -25,6 +25,7 @@ matches:
 
   - trigger: ":ngrokurl"
     replace: "{{output}}"
+    label: "Get the ngrok url (ngrok needs to be running beforehand)"
     vars:
       - name: output
         type: shell
