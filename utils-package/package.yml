@@ -31,6 +31,14 @@ matches:
         type: shell
         params:
           cmd: "curl --silent --show-error http://127.0.0.1:4040/api/tunnels | jq -r '.tunnels[0].public_url'"
+
+  - trigger: "ngroklocal"
+    replace: {{output}}
+    label: "Get the local address for ngrok tunnel"
+    vars:
+      - name: output
+        type: shell
+        params: "curl -s http://127.0.0.1:4040/api/tunnels | jq -r '.tunnels[0].config.addr'"
   
   - trigger: ":shrug"
     replace: "¯\\_(ツ)_/¯"
