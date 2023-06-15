@@ -41,6 +41,9 @@ matches:
   # Custom
   - trigger: ":jira"
     replace: "https://mgmdigitalventures.atlassian.net/jira/software/c/projects/RTC/boards/242"
+  
+  - trigger: ":toolsjira"
+    replace: "https://mgmdigitalventures.atlassian.net/jira/software/c/projects/MAR/boards/444"
 
   - trigger: ":acsjira"
     replace: "https://mgmdigitalventures.atlassian.net/jira/software/c/projects/MMC/boards/187"
