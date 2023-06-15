@@ -42,6 +42,10 @@ matches:
   - trigger: ":jira"
     replace: "https://mgmdigitalventures.atlassian.net/jira/software/c/projects/RTC/boards/242"
     label: "RTC JIRA Board"
+    
+  - trigger: ":jira2"
+    replace: "https://mgmdigitalventures.atlassian.net/jira/software/c/projects/RTC/boards/906"
+    label: "Combined JIRA Board"
   
   - trigger: ":toolsjira"
     replace: "https://mgmdigitalventures.atlassian.net/jira/software/c/projects/MAR/boards/444"
