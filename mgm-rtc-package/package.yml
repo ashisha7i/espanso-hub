@@ -41,15 +41,15 @@ matches:
   # Custom
   - trigger: ":jira"
     replace: "https://mgmdigitalventures.atlassian.net/jira/software/c/projects/RTC/boards/242"
-    description: "RTC JIRA Board"
+    label: "RTC JIRA Board"
   
   - trigger: ":toolsjira"
     replace: "https://mgmdigitalventures.atlassian.net/jira/software/c/projects/MAR/boards/444"
-    description: "Tools JIRA Board"
+    label: "Tools JIRA Board"
 
   - trigger: ":acsjira"
     replace: "https://mgmdigitalventures.atlassian.net/jira/software/c/projects/MMC/boards/187"
-    description: "Adobe JIRA Board"
+    label: "Adobe JIRA Board"
 
   - trigger: ":ticket"
     replace: "https://mgmdigitalventures.atlassian.net/browse/"
