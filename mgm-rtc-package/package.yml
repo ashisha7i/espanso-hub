@@ -99,6 +99,14 @@ matches:
     replace: "https://portal.azure.com/#@MGMResorts.onmicrosoft.com/resource/subscriptions/b2a26042-2b0c-4ed4-b52a-c9c8eef50d8b/resourceGroups/cigrtc-uw-rg-p/overview"
     label: "Azure Portal Prod (cigrtc-uw-rg-p)"
 
+  - trigger: ":prtlmp"
+    replace: "https://portal.azure.com/#@MGMResorts.onmicrosoft.com/resource/subscriptions/654cdd16-7548-4f00-a6f6-90e3ff942711/resourceGroups/martech-uw-rg-p/overview"
+    label: "Azure Portal Martech PROD (martech-uw-rg-p)"
+
+  - trigger: ":prtlmq"
+    replace: "https://portal.azure.com/#@MGMResorts.onmicrosoft.com/resource/subscriptions/6dc96857-10c6-4daf-8a85-5bdbb1a0f38c/resourceGroups/martech-tdd-uw-rg-qa/overview"
+    label: "Azure Portal Martech QA (martech-tdd-uw-rg-qa)"
+
   - trigger: ":approve"
     replace: "https://portal.azure.com/?Microsoft_Azure_PIMCommon=true#blade/Microsoft_Azure_PIMCommon/ApproveRequestMenuBlade/azurerbac"
     label: "Azure Portal Approve PIM Requests"
